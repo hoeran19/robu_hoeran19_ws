@@ -1,7 +1,7 @@
 import math
 
-def main():
-    print('Hi from robu.')
+def main(args=None):
+    print("wallfollower")
 
 
 if __name__ == '__main__':
