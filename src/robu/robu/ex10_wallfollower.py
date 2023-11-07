@@ -30,6 +30,9 @@ ROBOT_DIRECTION_LEFT_FRONT_INDEX = 315
 
 
 class WallFollower(Node):
+
+    
+
     def __init__(self):
         super().__init__('WallFollower')
         self.scan_subscriber = self.create_subscription(LaserScan, "/scan", self.scan_callback, qos_profile_sensor_data)
@@ -41,8 +44,10 @@ class WallFollower(Node):
         self.rightfront_dist = 9999999.9
         self.rightfront_dist = 9999999.9
         self.rear_dist = 9999999.9
-
+        self.distances = []
         self.wallfollower_state = WallFollowerStates.WF_STATE_DETECTWALL
+
+        self.valid_lidar_data = False
 
         self.forward_speed_wf_slow = 0.05
         self.forward_speed_wf_fast = 0.1
@@ -53,13 +58,40 @@ class WallFollower(Node):
         self.dist_thresh_wf = 0.3
         self.dist_hysteresis_wf = 0.02
 
+        self.dist_laser_offset = 0.03
+
         self.timer = self.create_timer(0.2, self.timer_callback)
 
     def timer_callback(self):
-        pass
+        if self.valid_lidar_data:  #Beim erstmaligen Aufruf liegen noch keine LiDAR Daten vor  
+            self.follow_wall()
 
-    def scan_callback(self, msg):
-        pass
+    def follow_wall(self):
+        msg = Twist()
+        msg.linear.x = 0.0
+        msg.linear.y = 0.0
+        msg.linear.z = 0.0
+
+        msg.angular.x = 0.0
+        msg.angular.y = 0.0
+        msg.angular.z = 0.0
+
+        if self.wallfollower_state == WallFollowerStates.WF_STATE_DETECTWALL:
+            dist_min = min(self.distances)
+            #Drehe Roboter solange bis auf der X-Achse der Mindestabstand erscheint
+            if self.front_dist > (dist_min + self.dist_laser_offset): 
+            
+                #Wenn der Roboter kurz vor dem Mindestabstand ist, verringert dieser die Drehgeschwindigkeit
+                if abs(self.front_dist - dist_min) < 0.2:
+                    msg.angular.z = self.turning_speed_wf_slow
+                else:
+                    msg.angular.z = self.turning_speed_wf_fast
+            else:
+                print("WF_STATE_DETECTWALL")
+                self.wallfollower_state = WallFollowerStates.WF_STATE_DRIVE2WALL
+        self.cmd_vel_publisher.publish(msg)
+
+        
 
     def scan_callback(self, msg):
         self.left_dist = msg.ranges[ROBOT_DIRECTION_LEFT_INDEX]         
@@ -68,6 +100,10 @@ class WallFollower(Node):
         self.rightfront_dist = msg.ranges[ROBOT_DIRECTION_RIGHT_FRONT_INDEX]
         self.right_dist = msg.ranges[ROBOT_DIRECTION_RIGHT_INDEX]
         self.rear_dist = msg.ranges[ROBOT_DIRECTION_REAR_INDEX]
+
+        self.distances = msg.ranges
+
+        self.valid_lidar_data = True
 
         print("ld: %.2f m" % self.left_dist,
                 "lfd: %.2f m" % self.leftfront_dist,
@@ -80,11 +116,11 @@ class WallFollower(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    Wallfollower = WallFollower()
+    wallFollower = WallFollower()
 
-    rclpy.spin(WallFollower)
+    rclpy.spin(wallFollower)
 
-    Wallfollower.destroy_node()
+    wallFollower.destroy_node()
     rclpy.shutdown()
 
 #if __name__ == '__main__':
