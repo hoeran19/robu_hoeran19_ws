@@ -84,7 +84,7 @@ def main(args=None):
 
     rclpy.spin(WallFollower)
 
-    wallfollower.destroy_node()
+    Wallfollower.destroy_node()
     rclpy.shutdown()
 
 #if __name__ == '__main__':
