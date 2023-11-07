@@ -1,9 +1,10 @@
 import math
 import rclpy
+from rclpy.node import Node
 
 from std_msgs.msg import String
 from geometry_msgs.msg import Twist 
-from std_msgs.msg import LaserScan
+from sensor_msgs.msg import LaserScan
 
 from rclpy.qos import qos_profile_sensor_data
 
@@ -28,13 +29,7 @@ ROBOT_DIRECTION_LEFT_INDEX = 270
 ROBOT_DIRECTION_LEFT_FRONT_INDEX = 315
 
 
-
-
-
-
-
-
-class WallFollower(rclpy.Node):
+class WallFollower(Node):
     def __init__(self):
         super().__init__('WallFollower')
         self.scan_subscriber = self.create_subscription(LaserScan, "/scan", self.scan_callback, qos_profile_sensor_data)
@@ -66,13 +61,7 @@ class WallFollower(rclpy.Node):
     def scan_callback(self, msg):
         pass
 
-
-
-
-    
-
     def scan_callback(self, msg):
-
         self.left_dist = msg.ranges[ROBOT_DIRECTION_LEFT_INDEX]         
         self.leftfront_dist = msg.ranges[ROBOT_DIRECTION_LEFT_FRONT_INDEX]
         self.front_dist = msg.ranges[ROBOT_DIRECTION_FRONT_INDEX]
@@ -81,11 +70,11 @@ class WallFollower(rclpy.Node):
         self.rear_dist = msg.ranges[ROBOT_DIRECTION_REAR_INDEX]
 
         print("ld: %.2f m" % self.left_dist,
-              "lfd: %.2f m" % self.leftfront_dist,
-              "fd: %.2f m" % self. front_dist,
-              "rfd: %.2f m" % self.rightfront_dist,
-              "rd: %.2f m" % self.right_dist,
-              "rrd: %.2f m" % self.rear_dist)
+                "lfd: %.2f m" % self.leftfront_dist,
+                "fd: %.2f m" % self. front_dist,
+                "rfd: %.2f m" % self.rightfront_dist,
+                "rd: %.2f m" % self.right_dist,
+                "rrd: %.2f m" % self.rear_dist)
 
 
 
