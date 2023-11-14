@@ -13,10 +13,12 @@ import numpy as np
 from enum import IntEnum
 
 class WallFollowerStates(IntEnum):
+    WF_STATE_INVALID = -1,
     WF_STATE_DETECTWALL = 0,
     WF_STATE_DRIVE2WALL = 1,
     WF_STATE_ROTATE2WALL = 2,
     WF_STATE_FOLLOWWALL = 3
+    
 
 
 ROBOT_DIRECTION_FRONT_INDEX = 0
@@ -45,7 +47,7 @@ class WallFollower(Node):
         self.rightfront_dist = 9999999.9
         self.rear_dist = 9999999.9
         self.distances = []
-        self.wallfollower_state = WallFollowerStates.WF_STATE_DETECTWALL
+        self.wallfollower_state = WallFollowerStates.WF_STATE_INVALID
 
         self.valid_lidar_data = False
 
@@ -76,7 +78,12 @@ class WallFollower(Node):
         msg.angular.y = 0.0
         msg.angular.z = 0.0
 
-        if self.wallfollower_state == WallFollowerStates.WF_STATE_DETECTWALL:
+        if self.wallfollower_state == WallFollowerStates.WF_STATE_INVALID:
+            print("WF_STATE_DETECTWALL")
+            self.wallfollower_state = WallFollowerStates.WF_STATE_DETECTWALL
+        
+
+        elif self.wallfollower_state == WallFollowerStates.WF_STATE_DETECTWALL:
             dist_min = min(self.distances)
             #Drehe Roboter solange bis auf der X-Achse der Mindestabstand erscheint
             if self.front_dist > (dist_min + self.dist_laser_offset): 
@@ -87,11 +94,66 @@ class WallFollower(Node):
                 else:
                     msg.angular.z = self.turning_speed_wf_fast
             else:
-                print("WF_STATE_DETECTWALL")
+                print("WF_STATE_DRIVE2WALL")
                 self.wallfollower_state = WallFollowerStates.WF_STATE_DRIVE2WALL
+
+        elif self.wallfollower_state == WallFollowerStates.WF_STATE_DRIVE2WALL:
+            fd_thresh = self.dist_thresh_wf + self.dist_laser_offset
+
+            forward_speed_wf = self.calc_linear_speed()
+            
+            if self.front_dist > (fd_thresh + self.dist_hysteresis_wf):
+                msg.linear.x = forward_speed_wf
+            elif self.front_dist < (fd_thresh - self.dist_hysteresis_wf):
+                msg.linear.x = -forward_speed_wf
+            else:
+                turn_direction = self.align_front()
+                msg.angular.z = self.turning_speed_wf_slow * turn_direction
+                if turn_direction == 0:
+                    print("WF_STATE_ROTATE2WALL")
+                    #safe the current distances as a input for the state ROTATE2WALL
+                    self.wallfollower_state_input_dist = self.distances
+                    self.wallfollower_state = WallFollowerStates.WF_STATE_ROTATE2WALL
+
+        elif self.wallfollower_state == WallFollowerStates.WF_STATE_ROTATE2WALL:
+            sr = self.wallfollower_state_input_dist[ROBOT_DIRECTION_RIGHT_INDEX]
+            if ( (sr != np.inf) and (abs(self.front_dist - self.dist_laser_offset - sr)
+                 > 0.05 )) or ((self.front_dist != np.inf) and (sr == np.inf)):
+                    msg.angular.z = -self.turning_speed_wf_fast
+            else:
+                turn_direction = self.align_left()
+
+
+
+
+        print(msg)
         self.cmd_vel_publisher.publish(msg)
 
+    def align_left(self):
         
+
+    def align_speed(self):
+        fl = self.distances[ROBOT_DIRECTION_LEFT_FRONT_INDEX]
+        fr = self.distances[ROBOT_DIRECTION_RIGHT_FRONT_INDEX]
+
+        if (fl - fr) > self.dist_hysteresis_wf:
+            return 1 #turning left
+        elif (fr - fl) > self.dist_hysteresis_wf: 
+            return -1 #turning right
+        else:
+            return 0 #aligned
+
+
+
+    def calc_linear_speed(self):
+        fd_thresh = self.dist_thresh_wf + self.dist_laser_offset
+        if self.front_dist > (1.2 * fd_thresh):
+            forward_speed_wf = self.forward_speed_wf_fast
+        else:
+            forward_speed_wf = self.forward_speed_wf_slow
+
+        return forward_speed_wf
+
 
     def scan_callback(self, msg):
         self.left_dist = msg.ranges[ROBOT_DIRECTION_LEFT_INDEX]         
