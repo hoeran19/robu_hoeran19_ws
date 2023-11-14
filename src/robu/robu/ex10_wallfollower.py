@@ -122,6 +122,12 @@ class WallFollower(Node):
                     msg.angular.z = -self.turning_speed_wf_fast
             else:
                 turn_direction = self.align_left()
+                msg.angular.z = self.turning_speed_wf_slow * turn_direction
+                if turn_direction == 0:
+                    print("WF_STATE_FOLLOWWALL")
+                    self.wallfollower_state = WallFollowerStates.WF_STATE_FOLLOWWALL
+        elif self.wallfollower_state == WallFollowerStates.WF_STATE_FOLLOWWALL:
+            pass
 
 
 
@@ -130,7 +136,15 @@ class WallFollower(Node):
         self.cmd_vel_publisher.publish(msg)
 
     def align_left(self):
-        
+        fl = self.distances[ROBOT_DIRECTION_LEFT_FRONT_INDEX]
+        rl = self.distances[ROBOT_DIRECTION_LEFT_REAR_INDEX]
+
+        if (fl - rl) > self.dist_hysteresis_wf:
+            return 1 #turning left
+        elif (rl - fl) > self.dist_hysteresis_wf:
+            return -1 #turning right
+        else:
+            return 0 #aligned
 
     def align_speed(self):
         fl = self.distances[ROBOT_DIRECTION_LEFT_FRONT_INDEX]
