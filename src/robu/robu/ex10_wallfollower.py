@@ -128,6 +128,7 @@ class WallFollower(Node):
                     self.wallfollower_state = WallFollowerStates.WF_STATE_FOLLOWWALL
         elif self.wallfollower_state == WallFollowerStates.WF_STATE_FOLLOWWALL:
             pass
+            #todo
 
 
 
