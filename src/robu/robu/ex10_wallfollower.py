@@ -147,7 +147,7 @@ class WallFollower(Node):
         else:
             return 0 #aligned
 
-    def align_speed(self):
+    def align_front(self):
         fl = self.distances[ROBOT_DIRECTION_LEFT_FRONT_INDEX]
         fr = self.distances[ROBOT_DIRECTION_RIGHT_FRONT_INDEX]
 
