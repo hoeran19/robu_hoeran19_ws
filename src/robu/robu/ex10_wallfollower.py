@@ -133,6 +133,9 @@ class WallFollower(Node):
         self.leftfront_dist = self.get_dist_avg_history(ROBOT_DIRECTION_LEFT_FRONT_INDEX)
         self.front_dist = self.get_dist_avg_history(ROBOT_DIRECTION_FRONT_INDEX)
         self.rightfront_dist = self.get_dist_avg_history(ROBOT_DIRECTION_RIGHT_FRONT_INDEX)
+
+        print(self.get_dist_avg_history(ROBOT_DIRECTION_RIGHT_FRONT_INDEX))
+        
         self.right_dist = self.get_dist_avg_history(ROBOT_DIRECTION_RIGHT_INDEX)
         self.rightrear_dist = self.get_dist_avg_history(ROBOT_DIRECTION_RIGHT_REAR_INDEX)
         self.rear_dist = self.get_dist_avg_history(ROBOT_DIRECTION_REAR_INDEX)
