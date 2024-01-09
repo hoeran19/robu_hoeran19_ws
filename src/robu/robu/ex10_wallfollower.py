@@ -93,7 +93,7 @@ class WallFollower(Node):
         # Wall following distance threshold.
         # We want to try to keep within this distance from the wall.
         self.dist_thresh_wf = 0.3 # in meters  
-        self.dist_hysteresis_wf = 0.02 # in meters
+        self.dist_hysteresis_wf = 0.02 # in meter
 
         self.dist_laser_offset = 0.03
         self.minimum_distance_laser = 0.1
