@@ -31,6 +31,14 @@ ROBOT_DIRECTION_RIGHT_REAR_INDEX = 240
 ROBOT_DIRECTION_RIGHT_INDEX = 270
 ROBOT_DIRECTION_RIGHT_FRONT_INDEX = 300
 
+
+def mapv(value, in_min, in_max, out_min, out_max):
+    return int((value - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
+    
+def mapv_dagrees(value):
+    return mapv(value, 0, 360, 0, 220)
+
+
 class WallFollowerStates(IntEnum):
     WF_STATE_INVALID = -1,
     WF_STATE_DETECTWALL = 0,
@@ -87,13 +95,13 @@ class WallFollower(Node):
 
         # Set turning speeds (to the left) in rad/s 
         # These values were determined by trial and error.
-        self.turning_speed_wf_fast = 1.0  # Fast turn
+        self.turning_speed_wf_fast = 0.5  # Fast turn
         self.turning_speed_wf_slow = 0.1 # Slow turn
          
         # Wall following distance threshold.
         # We want to try to keep within this distance from the wall.
         self.dist_thresh_wf = 0.3 # in meters  
-        self.dist_hysteresis_wf = 0.02 # in meter
+        self.dist_hysteresis_wf = 0.02 # in meters
 
         self.dist_laser_offset = 0.03
         self.minimum_distance_laser = 0.1
@@ -119,6 +127,8 @@ class WallFollower(Node):
             return -1
         
 
+    
+
     def scan_callback(self, msg):
         """
         This method gets called every time a LaserScan message is 
@@ -129,17 +139,16 @@ class WallFollower(Node):
         if (len(self.distances_history) > self.distances_histroy_size):
             self.distances_history = self.distances_history[1:]
         
-        self.left_dist = self.get_dist_avg_history(ROBOT_DIRECTION_LEFT_INDEX)
-        self.leftfront_dist = self.get_dist_avg_history(ROBOT_DIRECTION_LEFT_FRONT_INDEX)
-        self.front_dist = self.get_dist_avg_history(ROBOT_DIRECTION_FRONT_INDEX)
-        self.rightfront_dist = self.get_dist_avg_history(ROBOT_DIRECTION_RIGHT_FRONT_INDEX)
+        self.left_dist = self.get_dist_avg_history(mapv_dagrees(ROBOT_DIRECTION_LEFT_INDEX))
+        self.leftfront_dist = self.get_dist_avg_history(mapv_dagrees(ROBOT_DIRECTION_LEFT_FRONT_INDEX))
+        self.front_dist = self.get_dist_avg_history(mapv_dagrees(ROBOT_DIRECTION_FRONT_INDEX))
+        self.rightfront_dist = self.get_dist_avg_history(mapv_dagrees(ROBOT_DIRECTION_RIGHT_FRONT_INDEX))
 
-        print(self.get_dist_avg_history(ROBOT_DIRECTION_RIGHT_FRONT_INDEX))
         
-        self.right_dist = self.get_dist_avg_history(ROBOT_DIRECTION_RIGHT_INDEX)
-        self.rightrear_dist = self.get_dist_avg_history(ROBOT_DIRECTION_RIGHT_REAR_INDEX)
-        self.rear_dist = self.get_dist_avg_history(ROBOT_DIRECTION_REAR_INDEX)
-        self.leftrear_dist = self.get_dist_avg_history(ROBOT_DIRECTION_LEFT_REAR_INDEX)
+        self.right_dist = self.get_dist_avg_history(mapv_dagrees(ROBOT_DIRECTION_RIGHT_INDEX))
+        self.rightrear_dist = self.get_dist_avg_history(mapv_dagrees(ROBOT_DIRECTION_RIGHT_REAR_INDEX))
+        self.rear_dist = self.get_dist_avg_history(mapv_dagrees(ROBOT_DIRECTION_REAR_INDEX))
+        self.leftrear_dist = self.get_dist_avg_history(mapv_dagrees(ROBOT_DIRECTION_LEFT_REAR_INDEX))
 
         # if self.left_dist == np.inf:
         #     self.left_dist = 10
@@ -214,7 +223,7 @@ class WallFollower(Node):
                     self.wallfollower_state = WallFollowerStates.WF_STATE_ROTATE2WALL
 
         elif self.wallfollower_state == WallFollowerStates.WF_STATE_ROTATE2WALL:
-            sr = self.wallfollower_state_input_dist[ROBOT_DIRECTION_RIGHT_INDEX] #Abstand Statisch Rechts (vom vorigen State übernommen)
+            sr = self.wallfollower_state_input_dist[mapv_dagrees(ROBOT_DIRECTION_RIGHT_INDEX)] #Abstand Statisch Rechts (vom vorigen State übernommen)
 
             #print("Min-Abstand: %.2f, lr = %.2f, l = %.2f, lf = %.2f, f = %.2f, rf=%.2f" % (dist_min, lr, self.left_dist, lf, self.front_dist, rf))
         
@@ -223,7 +232,7 @@ class WallFollower(Node):
             # (sr == np.inf) -> Rechts befindet sich keine Wand im Erkennungsbereich des Laser 
             #                -> drehen bis der Frontabstand ebenfalls unendlich anzeigt
             if ((sr != np.inf) and (abs(self.front_dist - self.dist_laser_offset - sr) > 0.05)) or ((self.front_dist != np.inf) and (sr == np.inf)):
-                msg.angular.z = -self.turning_speed_wf_fast
+                msg.angular.z = -self.turning_speed_wf_slow
             else:
                 turn_direction = self.align_left()
                 msg.angular.z = self.turning_speed_wf_slow * turn_direction
@@ -283,8 +292,8 @@ class WallFollower(Node):
     
 
     def align_front(self):
-        fl = self.distances_history[-1][ROBOT_DIRECTION_LEFT_FRONT_INDEX]
-        fr = self.distances_history[-1][ROBOT_DIRECTION_RIGHT_FRONT_INDEX]
+        fl = self.distances_history[-1][mapv_dagrees(ROBOT_DIRECTION_LEFT_FRONT_INDEX)]
+        fr = self.distances_history[-1][mapv_dagrees(ROBOT_DIRECTION_RIGHT_FRONT_INDEX)]
             
         if ( (fr - fl) > self.dist_hysteresis_wf ):
             return 1    #turning left
@@ -294,8 +303,8 @@ class WallFollower(Node):
             return 0    #aligned
 
     def align_left(self):
-        lf = self.distances_history[-1][ROBOT_DIRECTION_LEFT_FRONT_INDEX]
-        lr = self.distances_history[-1][ROBOT_DIRECTION_LEFT_REAR_INDEX]
+        lf = self.distances_history[-1][mapv_dagrees(ROBOT_DIRECTION_LEFT_FRONT_INDEX)]
+        lr = self.distances_history[-1][mapv_dagrees(ROBOT_DIRECTION_LEFT_REAR_INDEX)]
 
         if (lf - lr) > self.dist_hysteresis_wf:
             return 1    #turning left
@@ -322,8 +331,8 @@ class WallFollower(Node):
         LEFT_ANGLE_DEG = 10
         LEFT_ANGLE_RAD =   (math.pi/180.0) * LEFT_ANGLE_DEG
         
-        left_front_dist = self.get_dist_avg_history(ROBOT_DIRECTION_LEFT_INDEX-LEFT_ANGLE_DEG)
-        left_rear_dist = self.get_dist_avg_history(ROBOT_DIRECTION_LEFT_INDEX+LEFT_ANGLE_DEG)
+        left_front_dist = self.get_dist_avg_history(mapv_dagrees(ROBOT_DIRECTION_LEFT_INDEX-LEFT_ANGLE_DEG))
+        left_rear_dist = self.get_dist_avg_history(mapv_dagrees(ROBOT_DIRECTION_LEFT_INDEX+LEFT_ANGLE_DEG))
 
         dx = math.sin(LEFT_ANGLE_RAD) * (left_front_dist - left_rear_dist)
         dy = math.cos(LEFT_ANGLE_RAD) * (left_front_dist + left_rear_dist)
@@ -348,4 +357,5 @@ def main(args=None):
 
 
 if __name__ == '__main__':
+    print(mapv_dagrees(ROBOT_DIRECTION_LEFT_REAR_INDEX))
     main()
