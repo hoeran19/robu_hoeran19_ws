@@ -28,7 +28,8 @@ setup(
             'mysubscriber = robu.subscriber_member_function:main',
             'myparameter = robu.ex11_parameter:main',
             'testparameter = robu.test_parameter:main',
-            'testparameter_get = robu.test_parameter_get:main' 
+            'testparameter_get = robu.test_parameter_get:main',
+            'fibonacci_server = robu.ex12_fibonacci_server:main'
         ],
     },
 )
