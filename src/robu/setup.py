@@ -29,7 +29,8 @@ setup(
             'myparameter = robu.ex11_parameter:main',
             'testparameter = robu.test_parameter:main',
             'testparameter_get = robu.test_parameter_get:main',
-            'fibonacci_server = robu.ex12_fibonacci_server:main'
+            'fibonacci_server = robu.ex12_fibonacci_server:main',
+            'fibonacci_client = robu.ex12_fibonacci_client:main'
         ],
     },
 )
