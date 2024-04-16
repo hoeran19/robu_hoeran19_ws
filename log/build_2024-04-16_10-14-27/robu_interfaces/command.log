@@ -1,0 +1,6 @@
+Invoking command in '/home/robu/work/robu_hoeran19_ws/build/robu_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/robu/work/robu_hoeran19_ws/src/robu_interfaces -DCMAKE_INSTALL_PREFIX=/home/robu/work/robu_hoeran19_ws/install/robu_interfaces
+Invoked command in '/home/robu/work/robu_hoeran19_ws/build/robu_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/robu/work/robu_hoeran19_ws/src/robu_interfaces -DCMAKE_INSTALL_PREFIX=/home/robu/work/robu_hoeran19_ws/install/robu_interfaces
+Invoking command in '/home/robu/work/robu_hoeran19_ws/build/robu_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/robu/work/robu_hoeran19_ws/build/robu_interfaces -- -j8 -l8
+Invoked command in '/home/robu/work/robu_hoeran19_ws/build/robu_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/robu/work/robu_hoeran19_ws/build/robu_interfaces -- -j8 -l8
+Invoking command in '/home/robu/work/robu_hoeran19_ws/build/robu_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/robu/work/robu_hoeran19_ws/build/robu_interfaces
+Invoked command in '/home/robu/work/robu_hoeran19_ws/build/robu_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/robu/work/robu_hoeran19_ws/build/robu_interfaces

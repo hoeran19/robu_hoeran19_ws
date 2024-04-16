@@ -6,9 +6,10 @@ from launch import LaunchDescription
 from launch.actions import (
     DeclareLaunchArgument,      #Zum Deklarieren von Argumenten beim Starten über die Kommandozeile
     ExecuteProcess,             #Zum Ausführen von Prozessen
-    IncludeLaunchDescription,   #Zum Einbinden von anderen Launch-Dateien
-    SetEnvironmentVariable      #Zum Setzen von Umgebungsvariablen
+    IncludeLaunchDescription,
+    SetEnvironmentVariable   #Zum Einbinden von anderen Launch-Dateien
 )
+
 from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PythonExpression
@@ -23,7 +24,7 @@ def generate_launch_description():
     map_yaml_file = os.path.join(robu_dir, 'maps', 'tb3_world', 'tb3_world.yaml')
     world = os.path.join(tb3_world_dir, 'worlds', 'turtlebot3_world.world')
     robot_name = 'turtlebot3_burger'
-    robot_urdf = os.path.join(nav2_bringup_dir, 'urdf', robot_name + '.urdf')
+    robot_urdf = os.path.join(tb3_world_dir, 'urdf', robot_name + '.urdf')
     robot_model_file = os.path.join(tb3_world_dir, 'models', robot_name, 'model.sdf')
 
     robot_pose = {'x': '-2.00',
@@ -46,8 +47,7 @@ def generate_launch_description():
     headless = LaunchConfiguration('headless')
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
 
-    envar_cmd = SetEnvironmentVariable('ROS_DOMAIN_ID', '12')
-                           
+    envar_cmd = SetEnvironmentVariable('ROS_DOMAIN_ID', '7')
     # Declare the launch arguments
     declare_use_rviz_cmd = DeclareLaunchArgument(
         'use_rviz', default_value='True', description='Whether to start RVIZ'
@@ -128,6 +128,3 @@ def generate_launch_description():
     ld.add_action(bringup_cmd)
     
     return ld
-
-
-

@@ -1,0 +1,52 @@
+[4.876s] Invoking command in '/home/robu/work/robu_hoeran19_ws/src/robu': PYTHONPATH=/home/robu/work/robu_hoeran19_ws/build/robu/prefix_override:/home/robu/work/robu_hoeran19_ws/install/robu/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/robu build --build-base /home/robu/work/robu_hoeran19_ws/build/robu/build install --record /home/robu/work/robu_hoeran19_ws/build/robu/install.log --single-version-externally-managed
+[5.737s] running egg_info
+[5.738s] creating ../../build/robu/robu.egg-info
+[5.739s] writing ../../build/robu/robu.egg-info/PKG-INFO
+[5.739s] writing dependency_links to ../../build/robu/robu.egg-info/dependency_links.txt
+[5.739s] writing entry points to ../../build/robu/robu.egg-info/entry_points.txt
+[5.740s] writing requirements to ../../build/robu/robu.egg-info/requires.txt
+[5.740s] writing top-level names to ../../build/robu/robu.egg-info/top_level.txt
+[5.740s] writing manifest file '../../build/robu/robu.egg-info/SOURCES.txt'
+[5.744s] reading manifest file '../../build/robu/robu.egg-info/SOURCES.txt'
+[5.746s] writing manifest file '../../build/robu/robu.egg-info/SOURCES.txt'
+[5.747s] running build
+[5.748s] running build_py
+[5.748s] creating /home/robu/work/robu_hoeran19_ws/build/robu/build
+[5.748s] creating /home/robu/work/robu_hoeran19_ws/build/robu/build/lib
+[5.749s] creating /home/robu/work/robu_hoeran19_ws/build/robu/build/lib/robu
+[5.749s] copying robu/ex11_parameter.py -> /home/robu/work/robu_hoeran19_ws/build/robu/build/lib/robu
+[5.750s] copying robu/ex10_wallfollower.py -> /home/robu/work/robu_hoeran19_ws/build/robu/build/lib/robu
+[5.750s] copying robu/ex12_fibonacci_client.py -> /home/robu/work/robu_hoeran19_ws/build/robu/build/lib/robu
+[5.750s] copying robu/__init__.py -> /home/robu/work/robu_hoeran19_ws/build/robu/build/lib/robu
+[5.750s] copying robu/ex14_navigation.py -> /home/robu/work/robu_hoeran19_ws/build/robu/build/lib/robu
+[5.751s] copying robu/ex12_fibonacci_server.py -> /home/robu/work/robu_hoeran19_ws/build/robu/build/lib/robu
+[5.752s] running install
+[5.753s] running install_lib
+[5.754s] creating /home/robu/work/robu_hoeran19_ws/install/robu/lib/python3.10/site-packages/robu
+[5.755s] copying /home/robu/work/robu_hoeran19_ws/build/robu/build/lib/robu/ex11_parameter.py -> /home/robu/work/robu_hoeran19_ws/install/robu/lib/python3.10/site-packages/robu
+[5.755s] copying /home/robu/work/robu_hoeran19_ws/build/robu/build/lib/robu/ex10_wallfollower.py -> /home/robu/work/robu_hoeran19_ws/install/robu/lib/python3.10/site-packages/robu
+[5.756s] copying /home/robu/work/robu_hoeran19_ws/build/robu/build/lib/robu/ex12_fibonacci_client.py -> /home/robu/work/robu_hoeran19_ws/install/robu/lib/python3.10/site-packages/robu
+[5.756s] copying /home/robu/work/robu_hoeran19_ws/build/robu/build/lib/robu/__init__.py -> /home/robu/work/robu_hoeran19_ws/install/robu/lib/python3.10/site-packages/robu
+[5.756s] copying /home/robu/work/robu_hoeran19_ws/build/robu/build/lib/robu/ex14_navigation.py -> /home/robu/work/robu_hoeran19_ws/install/robu/lib/python3.10/site-packages/robu
+[5.756s] copying /home/robu/work/robu_hoeran19_ws/build/robu/build/lib/robu/ex12_fibonacci_server.py -> /home/robu/work/robu_hoeran19_ws/install/robu/lib/python3.10/site-packages/robu
+[5.757s] byte-compiling /home/robu/work/robu_hoeran19_ws/install/robu/lib/python3.10/site-packages/robu/ex11_parameter.py to ex11_parameter.cpython-310.pyc
+[5.758s] byte-compiling /home/robu/work/robu_hoeran19_ws/install/robu/lib/python3.10/site-packages/robu/ex10_wallfollower.py to ex10_wallfollower.cpython-310.pyc
+[5.764s] byte-compiling /home/robu/work/robu_hoeran19_ws/install/robu/lib/python3.10/site-packages/robu/ex12_fibonacci_client.py to ex12_fibonacci_client.cpython-310.pyc
+[5.765s] byte-compiling /home/robu/work/robu_hoeran19_ws/install/robu/lib/python3.10/site-packages/robu/__init__.py to __init__.cpython-310.pyc
+[5.765s] byte-compiling /home/robu/work/robu_hoeran19_ws/install/robu/lib/python3.10/site-packages/robu/ex14_navigation.py to ex14_navigation.cpython-310.pyc
+[5.766s] byte-compiling /home/robu/work/robu_hoeran19_ws/install/robu/lib/python3.10/site-packages/robu/ex12_fibonacci_server.py to ex12_fibonacci_server.cpython-310.pyc
+[5.766s] running install_data
+[5.768s] copying launch/ex14_navigation_launch.py -> /home/robu/work/robu_hoeran19_ws/install/robu/share/robu
+[5.770s] running install_egg_info
+[5.774s] Copying ../../build/robu/robu.egg-info to /home/robu/work/robu_hoeran19_ws/install/robu/lib/python3.10/site-packages/robu-0.0.0-py3.10.egg-info
+[5.778s] running install_scripts
+[5.831s] Installing fibonacci_client script to /home/robu/work/robu_hoeran19_ws/install/robu/lib/robu
+[5.832s] Installing fibonacci_server script to /home/robu/work/robu_hoeran19_ws/install/robu/lib/robu
+[5.832s] Installing myparameter script to /home/robu/work/robu_hoeran19_ws/install/robu/lib/robu
+[5.832s] Installing mypublisher script to /home/robu/work/robu_hoeran19_ws/install/robu/lib/robu
+[5.832s] Installing mysubscriber script to /home/robu/work/robu_hoeran19_ws/install/robu/lib/robu
+[5.833s] Installing testparameter script to /home/robu/work/robu_hoeran19_ws/install/robu/lib/robu
+[5.833s] Installing testparameter_get script to /home/robu/work/robu_hoeran19_ws/install/robu/lib/robu
+[5.833s] Installing wallfollower script to /home/robu/work/robu_hoeran19_ws/install/robu/lib/robu
+[5.833s] writing list of installed files to '/home/robu/work/robu_hoeran19_ws/build/robu/install.log'
+[5.922s] Invoked command in '/home/robu/work/robu_hoeran19_ws/src/robu' returned '0': PYTHONPATH=/home/robu/work/robu_hoeran19_ws/build/robu/prefix_override:/home/robu/work/robu_hoeran19_ws/install/robu/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/robu build --build-base /home/robu/work/robu_hoeran19_ws/build/robu/build install --record /home/robu/work/robu_hoeran19_ws/build/robu/install.log --single-version-externally-managed
