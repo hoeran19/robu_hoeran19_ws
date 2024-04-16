@@ -1,0 +1,199 @@
+[3.173s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[3.174s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7bec512d9de0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7bec5125d450>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7bec5125d450>>)
+[3.306s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[3.306s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[3.306s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[3.306s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[3.307s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[3.307s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[3.307s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/robu/work/robu_hoeran19_ws'
+[3.307s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[3.308s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[3.308s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[3.308s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[3.308s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[3.308s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[3.308s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[3.308s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[3.309s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[3.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[3.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[3.337s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[3.337s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[3.337s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[3.337s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[3.338s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[3.338s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[3.338s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[3.339s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[3.339s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[3.339s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[3.340s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[3.340s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[3.340s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[3.341s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[3.341s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[3.341s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[3.341s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[3.341s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[3.342s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[3.342s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[3.342s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[3.342s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[3.342s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[3.342s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[3.343s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[3.343s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[3.343s] Level 1:colcon.colcon_core.package_identification:_identify(src/robu) by extensions ['ignore', 'ignore_ament_install']
+[3.343s] Level 1:colcon.colcon_core.package_identification:_identify(src/robu) by extension 'ignore'
+[3.344s] Level 1:colcon.colcon_core.package_identification:_identify(src/robu) by extension 'ignore_ament_install'
+[3.344s] Level 1:colcon.colcon_core.package_identification:_identify(src/robu) by extensions ['colcon_pkg']
+[3.344s] Level 1:colcon.colcon_core.package_identification:_identify(src/robu) by extension 'colcon_pkg'
+[3.344s] Level 1:colcon.colcon_core.package_identification:_identify(src/robu) by extensions ['colcon_meta']
+[3.344s] Level 1:colcon.colcon_core.package_identification:_identify(src/robu) by extension 'colcon_meta'
+[3.344s] Level 1:colcon.colcon_core.package_identification:_identify(src/robu) by extensions ['ros']
+[3.344s] Level 1:colcon.colcon_core.package_identification:_identify(src/robu) by extension 'ros'
+[3.350s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robu' with type 'ros.ament_python' and name 'robu'
+[3.350s] Level 1:colcon.colcon_core.package_identification:_identify(src/robu_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[3.351s] Level 1:colcon.colcon_core.package_identification:_identify(src/robu_interfaces) by extension 'ignore'
+[3.351s] Level 1:colcon.colcon_core.package_identification:_identify(src/robu_interfaces) by extension 'ignore_ament_install'
+[3.351s] Level 1:colcon.colcon_core.package_identification:_identify(src/robu_interfaces) by extensions ['colcon_pkg']
+[3.351s] Level 1:colcon.colcon_core.package_identification:_identify(src/robu_interfaces) by extension 'colcon_pkg'
+[3.352s] Level 1:colcon.colcon_core.package_identification:_identify(src/robu_interfaces) by extensions ['colcon_meta']
+[3.352s] Level 1:colcon.colcon_core.package_identification:_identify(src/robu_interfaces) by extension 'colcon_meta'
+[3.352s] Level 1:colcon.colcon_core.package_identification:_identify(src/robu_interfaces) by extensions ['ros']
+[3.352s] Level 1:colcon.colcon_core.package_identification:_identify(src/robu_interfaces) by extension 'ros'
+[3.354s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robu_interfaces' with type 'ros.ament_cmake' and name 'robu_interfaces'
+[3.354s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[3.354s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[3.354s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[3.354s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[3.354s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[3.619s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[3.620s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[3.718s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 2 installed packages in /home/robu/work/robu_hoeran19_ws/install
+[3.799s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 419 installed packages in /opt/ros/humble
+[3.810s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[4.214s] Level 5:colcon.colcon_core.verb:set package 'robu' build argument 'cmake_args' from command line to 'None'
+[4.214s] Level 5:colcon.colcon_core.verb:set package 'robu' build argument 'cmake_target' from command line to 'None'
+[4.214s] Level 5:colcon.colcon_core.verb:set package 'robu' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[4.215s] Level 5:colcon.colcon_core.verb:set package 'robu' build argument 'cmake_clean_cache' from command line to 'False'
+[4.215s] Level 5:colcon.colcon_core.verb:set package 'robu' build argument 'cmake_clean_first' from command line to 'False'
+[4.215s] Level 5:colcon.colcon_core.verb:set package 'robu' build argument 'cmake_force_configure' from command line to 'False'
+[4.215s] Level 5:colcon.colcon_core.verb:set package 'robu' build argument 'ament_cmake_args' from command line to 'None'
+[4.215s] Level 5:colcon.colcon_core.verb:set package 'robu' build argument 'catkin_cmake_args' from command line to 'None'
+[4.215s] Level 5:colcon.colcon_core.verb:set package 'robu' build argument 'catkin_skip_building_tests' from command line to 'False'
+[4.215s] DEBUG:colcon.colcon_core.verb:Building package 'robu' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/robu/work/robu_hoeran19_ws/build/robu', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/robu/work/robu_hoeran19_ws/install/robu', 'merge_install': False, 'path': '/home/robu/work/robu_hoeran19_ws/src/robu', 'symlink_install': False, 'test_result_base': None}
+[4.272s] Level 5:colcon.colcon_core.verb:set package 'robu_interfaces' build argument 'cmake_args' from command line to 'None'
+[4.272s] Level 5:colcon.colcon_core.verb:set package 'robu_interfaces' build argument 'cmake_target' from command line to 'None'
+[4.272s] Level 5:colcon.colcon_core.verb:set package 'robu_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[4.272s] Level 5:colcon.colcon_core.verb:set package 'robu_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[4.272s] Level 5:colcon.colcon_core.verb:set package 'robu_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[4.272s] Level 5:colcon.colcon_core.verb:set package 'robu_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[4.272s] Level 5:colcon.colcon_core.verb:set package 'robu_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[4.272s] Level 5:colcon.colcon_core.verb:set package 'robu_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[4.273s] Level 5:colcon.colcon_core.verb:set package 'robu_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[4.273s] DEBUG:colcon.colcon_core.verb:Building package 'robu_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/robu/work/robu_hoeran19_ws/build/robu_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces', 'merge_install': False, 'path': '/home/robu/work/robu_hoeran19_ws/src/robu_interfaces', 'symlink_install': False, 'test_result_base': None}
+[4.326s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[4.388s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[4.388s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/robu/work/robu_hoeran19_ws/src/robu' with build type 'ament_python'
+[4.390s] Level 1:colcon.colcon_core.shell:create_environment_hook('robu', 'ament_prefix_path')
+[4.450s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[4.451s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robu/work/robu_hoeran19_ws/install/robu/share/robu/hook/ament_prefix_path.ps1'
+[4.452s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robu/work/robu_hoeran19_ws/install/robu/share/robu/hook/ament_prefix_path.dsv'
+[4.454s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robu/work/robu_hoeran19_ws/install/robu/share/robu/hook/ament_prefix_path.sh'
+[4.507s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.507s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.673s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/robu/work/robu_hoeran19_ws/src/robu_interfaces' with build type 'ament_cmake'
+[4.674s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/robu/work/robu_hoeran19_ws/src/robu_interfaces'
+[4.726s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.727s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.696s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/robu/work/robu_hoeran19_ws/src/robu'
+[5.744s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.744s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.914s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robu/work/robu_hoeran19_ws/build/robu_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/robu/work/robu_hoeran19_ws/install/robu:/opt/ros/humble /usr/bin/cmake --build /home/robu/work/robu_hoeran19_ws/build/robu_interfaces -- -j8 -l8
+[7.319s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robu/work/robu_hoeran19_ws/build/robu_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/robu/work/robu_hoeran19_ws/install/robu:/opt/ros/humble /usr/bin/cmake --build /home/robu/work/robu_hoeran19_ws/build/robu_interfaces -- -j8 -l8
+[7.358s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robu/work/robu_hoeran19_ws/src/robu': PYTHONPATH=/home/robu/work/robu_hoeran19_ws/build/robu/prefix_override:/home/robu/work/robu_hoeran19_ws/install/robu/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/robu build --build-base /home/robu/work/robu_hoeran19_ws/build/robu/build install --record /home/robu/work/robu_hoeran19_ws/build/robu/install.log --single-version-externally-managed
+[7.784s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robu/work/robu_hoeran19_ws/build/robu_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/robu/work/robu_hoeran19_ws/install/robu:/opt/ros/humble /usr/bin/cmake --install /home/robu/work/robu_hoeran19_ws/build/robu_interfaces
+[8.023s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robu_interfaces)
+[8.028s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robu/work/robu_hoeran19_ws/build/robu_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/robu/work/robu_hoeran19_ws/install/robu:/opt/ros/humble /usr/bin/cmake --install /home/robu/work/robu_hoeran19_ws/build/robu_interfaces
+[8.121s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces' for CMake module files
+[8.124s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces' for CMake config files
+[8.125s] Level 1:colcon.colcon_core.shell:create_environment_hook('robu_interfaces', 'cmake_prefix_path')
+[8.186s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/hook/cmake_prefix_path.ps1'
+[8.188s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/hook/cmake_prefix_path.dsv'
+[8.191s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/hook/cmake_prefix_path.sh'
+[8.193s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/lib'
+[8.193s] Level 1:colcon.colcon_core.shell:create_environment_hook('robu_interfaces', 'ld_library_path_lib')
+[8.247s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/hook/ld_library_path_lib.ps1'
+[8.249s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/hook/ld_library_path_lib.dsv'
+[8.250s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/hook/ld_library_path_lib.sh'
+[8.251s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/bin'
+[8.252s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/lib/pkgconfig/robu_interfaces.pc'
+[8.252s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/lib/python3.10/site-packages'
+[8.253s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/bin'
+[8.309s] INFO:colcon.colcon_core.shell:Creating package script '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/package.ps1'
+[8.312s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/package.dsv'
+[8.314s] INFO:colcon.colcon_core.shell:Creating package script '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/package.sh'
+[8.316s] INFO:colcon.colcon_core.shell:Creating package script '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/package.bash'
+[8.319s] INFO:colcon.colcon_core.shell:Creating package script '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/package.zsh'
+[8.321s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/colcon-core/packages/robu_interfaces)
+[8.520s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robu/work/robu_hoeran19_ws/src/robu' returned '0': PYTHONPATH=/home/robu/work/robu_hoeran19_ws/build/robu/prefix_override:/home/robu/work/robu_hoeran19_ws/install/robu/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/robu build --build-base /home/robu/work/robu_hoeran19_ws/build/robu/build install --record /home/robu/work/robu_hoeran19_ws/build/robu/install.log --single-version-externally-managed
+[8.573s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu' for CMake module files
+[8.575s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu' for CMake config files
+[8.577s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu/lib'
+[8.577s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu/bin'
+[8.578s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu/lib/pkgconfig/robu.pc'
+[8.578s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu/lib/python3.10/site-packages'
+[8.578s] Level 1:colcon.colcon_core.shell:create_environment_hook('robu', 'pythonpath')
+[8.634s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robu/work/robu_hoeran19_ws/install/robu/share/robu/hook/pythonpath.ps1'
+[8.636s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robu/work/robu_hoeran19_ws/install/robu/share/robu/hook/pythonpath.dsv'
+[8.638s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robu/work/robu_hoeran19_ws/install/robu/share/robu/hook/pythonpath.sh'
+[8.641s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu/bin'
+[8.642s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robu)
+[8.702s] INFO:colcon.colcon_core.shell:Creating package script '/home/robu/work/robu_hoeran19_ws/install/robu/share/robu/package.ps1'
+[8.705s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robu/work/robu_hoeran19_ws/install/robu/share/robu/package.dsv'
+[8.708s] INFO:colcon.colcon_core.shell:Creating package script '/home/robu/work/robu_hoeran19_ws/install/robu/share/robu/package.sh'
+[8.710s] INFO:colcon.colcon_core.shell:Creating package script '/home/robu/work/robu_hoeran19_ws/install/robu/share/robu/package.bash'
+[8.712s] INFO:colcon.colcon_core.shell:Creating package script '/home/robu/work/robu_hoeran19_ws/install/robu/share/robu/package.zsh'
+[8.714s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robu/work/robu_hoeran19_ws/install/robu/share/colcon-core/packages/robu)
+[8.776s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robu_interfaces)
+[8.827s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces' for CMake module files
+[8.831s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces' for CMake config files
+[8.834s] Level 1:colcon.colcon_core.shell:create_environment_hook('robu_interfaces', 'cmake_prefix_path')
+[8.884s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/hook/cmake_prefix_path.ps1'
+[8.886s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/hook/cmake_prefix_path.dsv'
+[8.887s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/hook/cmake_prefix_path.sh'
+[8.890s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/lib'
+[8.890s] Level 1:colcon.colcon_core.shell:create_environment_hook('robu_interfaces', 'ld_library_path_lib')
+[8.944s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/hook/ld_library_path_lib.ps1'
+[8.945s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/hook/ld_library_path_lib.dsv'
+[8.946s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/hook/ld_library_path_lib.sh'
+[8.947s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/bin'
+[8.948s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/lib/pkgconfig/robu_interfaces.pc'
+[8.948s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/lib/python3.10/site-packages'
+[8.949s] Level 1:colcon.colcon_core.environment:checking '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/bin'
+[9.013s] INFO:colcon.colcon_core.shell:Creating package script '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/package.ps1'
+[9.015s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/package.dsv'
+[9.017s] INFO:colcon.colcon_core.shell:Creating package script '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/package.sh'
+[9.018s] INFO:colcon.colcon_core.shell:Creating package script '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/package.bash'
+[9.019s] INFO:colcon.colcon_core.shell:Creating package script '/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/robu_interfaces/package.zsh'
+[9.021s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robu/work/robu_hoeran19_ws/install/robu_interfaces/share/colcon-core/packages/robu_interfaces)
+[9.022s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[9.024s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[9.024s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[9.024s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[9.130s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[9.130s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[9.130s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[9.169s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[9.245s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/robu/work/robu_hoeran19_ws/install/local_setup.ps1'
+[9.248s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/robu/work/robu_hoeran19_ws/install/_local_setup_util_ps1.py'
+[9.251s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/robu/work/robu_hoeran19_ws/install/setup.ps1'
+[9.325s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/robu/work/robu_hoeran19_ws/install/local_setup.sh'
+[9.328s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/robu/work/robu_hoeran19_ws/install/_local_setup_util_sh.py'
+[9.330s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/robu/work/robu_hoeran19_ws/install/setup.sh'
+[9.408s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/robu/work/robu_hoeran19_ws/install/local_setup.bash'
+[9.410s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/robu/work/robu_hoeran19_ws/install/setup.bash'
+[9.465s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/robu/work/robu_hoeran19_ws/install/local_setup.zsh'
+[9.467s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/robu/work/robu_hoeran19_ws/install/setup.zsh'

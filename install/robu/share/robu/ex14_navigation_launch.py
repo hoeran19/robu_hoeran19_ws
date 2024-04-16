@@ -7,7 +7,7 @@ from launch.actions import (
     DeclareLaunchArgument,      #Zum Deklarieren von Argumenten beim Starten über die Kommandozeile
     ExecuteProcess,             #Zum Ausführen von Prozessen
     IncludeLaunchDescription,   #Zum Einbinden von anderen Launch-Dateien
-    SetEnvironmentVariable      #Zum Setzen von Umgebungsvariablen
+    SetEnvironmentVariable      #Zum Setzen von Umgebungsvariable
 )
 from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -47,7 +47,6 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
 
     envar_cmd = SetEnvironmentVariable('ROS_DOMAIN_ID', '7')
-                           
     # Declare the launch arguments
     declare_use_rviz_cmd = DeclareLaunchArgument(
         'use_rviz', default_value='True', description='Whether to start RVIZ'
